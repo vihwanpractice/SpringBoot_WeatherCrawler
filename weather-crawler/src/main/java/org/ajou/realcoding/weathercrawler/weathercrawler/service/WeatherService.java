@@ -4,6 +4,7 @@ package org.ajou.realcoding.weathercrawler.weathercrawler.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.ajou.realcoding.weathercrawler.weathercrawler.api.OpenWeatherMapApiClient;
+import org.ajou.realcoding.weathercrawler.weathercrawler.domain.CurrentWeather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +33,7 @@ public class WeatherService {
         return objectMapper.readValue(file, new TypeReference<List<String>>(){});
     }
 
-    public String getCurrentWeatherByCities(String cityName){
+    public CurrentWeather getCurrentWeatherByCities(String cityName){
         return openWeatherMapApiClient.requestCurrentWeather(cityName);
 
     }

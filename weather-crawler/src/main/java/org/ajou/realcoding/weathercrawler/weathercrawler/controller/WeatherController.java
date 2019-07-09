@@ -24,7 +24,7 @@ public class WeatherController {
 
     @GetMapping("/weather-crawler/current-weather/by-city-name/{cityName}")
     public CurrentWeather getCurrentWeather(@PathVariable String cityName){
-        return weatherService.getCurrentWeatherByCities(cityName);
+        return weatherService.getCurrentWeatherByCityName(cityName);
     }
 }
 
